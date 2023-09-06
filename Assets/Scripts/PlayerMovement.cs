@@ -7,19 +7,16 @@ public class PlayerMovement : MonoBehaviour
     public float forwardForce = 2000f;
     public float sideForce = 500f;
 
-
-
-    // Update is called once per frame
-    void FixedUpdate ()
+    void FixedUpdate()
     {
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
-        if (Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             rb.AddForce(sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
-        if (Input.GetKey("a"))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(-sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
