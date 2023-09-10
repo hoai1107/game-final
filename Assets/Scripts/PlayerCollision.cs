@@ -11,7 +11,6 @@ public class PlayerCollision : MonoBehaviour
         if (colInfo.collider.tag == "Obstacle")
         {
             movement.enabled = false;
-            collisionSoundEffect.time = 0.6f;
             collisionSoundEffect.Play();
             FindObjectOfType<GameManager>().EndGame();
         }
